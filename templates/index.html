@@ -1,0 +1,40 @@
+<!doctype html>
+<head>
+  <title>Flask app </title>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css') }}" >
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.5/build/pure-min.css" integrity="sha384-LTIDeidl25h2dPxrB2Ekgc9c7sEC3CWGM6HeFmuDNUjX76Ert4Z4IY714dhZHPLd" crossorigin="anonymous">
+
+</head>
+<h1> BMI Calcualator</h1>
+
+<body class="main" >
+<div>
+
+
+    <form class="pure-form" method="POST" action="/" >
+    <br>
+    <br>
+    Please enter your Height in centimeters :
+    <input type="number" name="userheight" > <br>
+    <br>
+    Please enter your Weight in kilograms.. :
+    <input type="number" name="userweight" > <br>
+    <br>
+    Click on this submit button to check your BMI :
+    <button type="submit" class="pure-button-primary" value="Submit">Submit</button>
+    <br>
+    <br>
+    <br>
+
+    </form>
+</div>
+
+<div>
+    {% if height %}
+      <p> Your height is : {{height}} </p>
+      <p> Your weight    : {{weight}} </p>
+      <p> Your BMI is    : {{bmi}} </p>
+      {% endif %}
+
+</div>
+</body>
